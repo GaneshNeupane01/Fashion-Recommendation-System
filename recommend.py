@@ -4,6 +4,7 @@ from io import BytesIO
 from PIL import Image
 import numpy as np
 import os
+import ntpath
 import pickle, tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.layers import GlobalMaxPooling2D
