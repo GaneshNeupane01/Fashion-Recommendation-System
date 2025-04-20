@@ -16,12 +16,8 @@ from database import add_image
 
 import os, pickle
 
-raw_names = pickle.load(open('filenames.pkl','rb'))
-filenames = [
-    os.path.join("images", os.path.basename(fn))
-    for fn in raw_names
-]
-
+raw_names  = pickle.load(open('filenames.pkl','rb'))
+filenames  = [os.path.join("images", ntpath.basename(fn)) for fn in raw_names]
 
 feature_list = np.array(pickle.load(open('embeddings.pkl','rb')))
 
@@ -96,4 +92,8 @@ def recommendation_page():
         st.markdown("---\n### Recommendations for you")
         rec_cols = st.columns(5)
         for i, c in enumerate(rec_cols):
-            c.image(filenames[picks[i]], use_container_width=True)  # :contentReference[oaicite:3]{index=3}
+            img_path = filenames[picks[i]]
+            if not os.path.exists(img_path):
+                c.error(f"❌ File not found: {img_path}")
+            else:
+                c.image(img_path, use_container_width=True)
