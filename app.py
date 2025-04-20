@@ -47,6 +47,7 @@ def load_css():
          /* make all Streamlit buttons have white text */
         .stButton>button {
             color: white !important;
+background:black ! important;
         }
             /* Global Styling */
             .stApp { background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%); font-family: 'Poppins', sans-serif; color: #2c3e50; }
