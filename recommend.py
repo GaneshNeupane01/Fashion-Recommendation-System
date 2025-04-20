@@ -90,7 +90,7 @@ def recommendation_page():
         vec   = extract_features(img_bytes)
         picks = get_recommendations(vec)
 
-        st.markdown("---\n### Recommendations for you")
+        st.markdown("---\nRecommendations for you")
         rec_cols = st.columns(5)
         for i, c in enumerate(rec_cols):
             img_path = filenames[picks[i]]
