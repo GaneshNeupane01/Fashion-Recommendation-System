@@ -71,7 +71,7 @@ def recommendation_page():
             st.session_state.redirect_to_profile = True
             do_rerun()
 
-    st.markdown("##Fashion Recommendation")
+    st.markdown("Fashion Recommendation")
     if not st.session_state.get("logged_in", False):
         st.warning("Please log in first.")
         return
