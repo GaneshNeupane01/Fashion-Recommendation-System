@@ -12,8 +12,12 @@ from numpy.linalg import norm
 from database import add_image
 
 # Preload embeddings & model
+
+raw_names   = pickle.load(open('filenames.pkl','rb'))
+filenames   = [os.path.join("images", fn) for fn in raw_names]
+
 feature_list = np.array(pickle.load(open('embeddings.pkl','rb')))
-filenames    = pickle.load(open('filenames.pkl','rb'))
+
 base         = ResNet50(weights='imagenet', include_top=False, input_shape=(224,224,3))
 base.trainable = False
 model = tf.keras.Sequential([base, GlobalMaxPooling2D()])
