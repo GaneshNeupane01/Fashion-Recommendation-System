@@ -14,8 +14,14 @@ from database import add_image
 
 # Preload embeddings & model
 
-raw_names   = pickle.load(open('filenames.pkl','rb'))
-filenames   = [os.path.join("images", fn) for fn in raw_names]
+import os, pickle
+
+raw_names = pickle.load(open('filenames.pkl','rb'))
+filenames = [
+    os.path.join("images", os.path.basename(fn))
+    for fn in raw_names
+]
+
 
 feature_list = np.array(pickle.load(open('embeddings.pkl','rb')))
 
