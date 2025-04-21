@@ -2,6 +2,7 @@ import streamlit as st
 import sqlite3
 import hashlib
 import os
+import ntpath
 import uuid
 import shutil
 from PIL import Image
@@ -180,10 +181,12 @@ def save_uploaded_file(uploaded_file, user_id):
 def load_model_and_data():
     feature_list = np.array(pickle.load(open('embeddings.pkl', 'rb')))
     feature_list = np.array(pickle.load(open('embeddings.pkl', 'rb')))
-    raw_filenames = pickle.load(open('filenames.pkl', 'rb'))
-    # assuming your images live in ./images relative to app.py:
-    filenames = [os.path.join(os.path.dirname(__file__), 'images', os.path.basename(f)) 
-                 for f in raw_filenames]
+    raw_names = pickle.load(open('filenames.pkl','rb'))
+    filenames = [
+    os.path.join("images", ntpath.basename(fn))
+    for fn in raw_names
+    ]
+
     model = ResNet50(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
     model.trainable = False
     model = Sequential([model, GlobalMaxPooling2D()])
