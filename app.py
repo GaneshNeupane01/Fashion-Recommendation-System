@@ -18,7 +18,7 @@ from numpy.linalg import norm
 
 # Page configuration
 st.set_page_config(
-    page_title="StyleVibe",
+    page_title="Fashion Advisor",
     page_icon="✨",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -230,7 +230,7 @@ def initialize():
 def render_header():
     st.markdown("""
     <div class="main-header">
-        <h1>StyleVibe ✨</h1>
+        <h1>Fashion Advisor ✨</h1>
         <p>Your Fashion Inspiration Hub</p>
     </div>
     """, unsafe_allow_html=True)
