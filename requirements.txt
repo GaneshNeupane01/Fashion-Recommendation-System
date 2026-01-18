@@ -3,3 +3,5 @@ pillow
 scikit-learn
 tensorflow
 numpy
+tqdm
+
