@@ -105,7 +105,7 @@ From the project root (where the Dockerfile lives):
 
 ```bash
 docker build -t fashion-advisor .
-``
+```
 
 ### 2. Run the Container
 
@@ -113,7 +113,7 @@ Expose Streamlit on port `8501`:
 
 ```bash
 docker run --rm -p 8501:8501 fashion-advisor
-``
+```
 
 Then open `http://localhost:8501` in your browser.
 
@@ -125,7 +125,7 @@ Example with a volume for uploads:
 docker run --rm -p 8501:8501 \
   -v "$(pwd)/uploads:/app/uploads" \
   fashion-advisor
-``
+```
 
 ---
 
@@ -137,7 +137,7 @@ Run:
 
 ```bash
 python train.py
-``
+```
 
 This will:
 
@@ -155,7 +155,7 @@ Usage:
 
 ```bash
 python test.py path/to/your/query_image.jpg --top_k 6
-``
+```
 
 This will print the paths of the `top_k` most similar catalog images (according to the embeddings in [embeddings.pkl](embeddings.pkl)).
 
