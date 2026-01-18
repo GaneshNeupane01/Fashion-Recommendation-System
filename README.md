@@ -163,3 +163,9 @@ This script is useful if you want to quickly check how good the embeddings are f
 
 ---
 
+## 👤 Author
+**Ganesh Neupane**
+Computer Engineering | AI / ML
+- GitHub: [@GaneshNeupane01](https://github.com/GaneshNeupane01)
+- Detail: [@portfolio](https://ganesh-neupane.com.np)
+
