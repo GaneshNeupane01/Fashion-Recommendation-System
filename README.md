@@ -57,8 +57,8 @@ pip install -r requirements.txt
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/<your-username>/fashion-advisor.git
-   cd fashion-advisor
+   git clone https://github.com/GaneshNeupane01/Fashion-Recommendation-System.git
+   cd Fashion-Recommendation-System
    ```
 
 2. **(Optional but recommended) Create and activate a virtual environment**
